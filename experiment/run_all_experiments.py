@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Final experiment runner for Python 3.12 Chinese docs + MDN English docs.
 

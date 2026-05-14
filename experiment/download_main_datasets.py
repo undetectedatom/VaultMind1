@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Download and prepare two main RAG document datasets:
 

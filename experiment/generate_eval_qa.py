@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Generate evaluation Q&A datasets for the RAG thesis experiments.
 
