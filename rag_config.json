@@ -1,0 +1,85 @@
+{
+  "providers": {
+    "openai": {
+      "base_url": "https://api.openai.com/v1",
+      "models": {
+        "gpt-4o-mini": {
+          "context_window": 128000
+        },
+        "text-embedding-3-small": {
+          "dimension": 1536
+        }
+      }
+    },
+    "ollama": {
+      "base_url": "http://localhost:11434",
+      "models": {
+        "llama3:8b": {
+          "context_window": 8192
+        },
+        "mistral": {
+          "context_window": 8192
+        }
+      }
+    },
+    "openai_doubao_embedding": {
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+      "models": {
+        "doubao-embedding-vision": {
+          "dimension": 1024
+        }
+      }
+    },
+    "doubao": {
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+      "models": {
+        "doubao-seed-2.0-pro": {
+          "context_window": 128000
+        },
+        "deepseek-v3.2": {
+          "context_window": 128000
+        },
+        "glm-4.7": {
+          "context_window": 128000
+        },
+        "kimi-2.6": {
+          "context_window": 128000
+        },
+        "doubao-embedding-vision": {
+          "dimension": 2048
+        }
+      }
+    }
+  },
+  "activities": {
+    "embedding": {
+      "provider": "doubao",
+      "model": "doubao-embedding-vision"
+    },
+    "router": {
+      "provider": "doubao",
+      "model": "deepseek-v3.2"
+    },
+    "generation": [
+      {
+        "provider": "doubao",
+        "model": "deepseek-v3.2"
+      },
+      {
+        "provider": "doubao",
+        "model": "doubao-seed-2.0-pro"
+      }
+    ]
+  },
+  "hyde": {
+    "enabled": true,
+    "temperature": 0.0
+  },
+  "routing": {
+    "enabled": true,
+    "confidence_threshold": 0.5
+  },
+  "retrieval": {
+    "top_k": 4
+  }
+}
